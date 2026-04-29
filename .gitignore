@@ -1,0 +1,61 @@
+﻿# Windows system files
+NTUSER.DAT*
+ntuser.ini
+ntuser.dat*
+*.LOG1
+*.LOG2
+*.TM.blf
+*.regtrans-ms
+skb.kc
+
+# Windows system directories
+AppData/
+3D Objects/
+Contacts/
+Favorites/
+Links/
+Music/
+OneDrive/
+Pictures/
+Saved Games/
+Searches/
+Videos/
+Desktop/
+Documents/
+Downloads/
+IntelGraphicsProfiles/
+eclipse/
+eclipse-workspace/
+source/
+
+# Windows symlinks / junction points
+Application Data
+Cookies
+Local Settings
+My Documents
+NetHood
+PrintHood
+Recent
+SendTo
+Templates
+
+# Dev tool config dirs
+.android/
+.cache/
+.dotnet/
+.eclipse/
+.idlerc/
+.local/
+.ms-ad/
+.ms-ad
+.p2/
+.templateengine/
+
+# Claude internal
+.claude/
+.claude.json
+
+# Node
+node_modules/
+# Korean system directories
+시작 메뉴

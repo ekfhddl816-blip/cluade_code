@@ -1,0 +1,214 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f5ede0;
+  background-image:
+    radial-gradient(ellipse at 20% 20%, #f2e4d5 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, #e8d5c4 0%, transparent 60%);
+  color: #3d2b1f;
+  font-family: 'Gowun Dodum', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 60px 16px 80px;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.date-label {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: #b08a74;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #3d2b1f;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: #b08a74;
+  letter-spacing: 0.05em;
+}
+
+/* ── Input row ── */
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+#todo-input {
+  flex: 1;
+  background: rgba(255,255,255,0.7);
+  border: 1.5px solid #e5d3c2;
+  border-radius: 14px;
+  padding: 13px 18px;
+  font-size: 0.93rem;
+  font-family: 'Gowun Dodum', sans-serif;
+  color: #3d2b1f;
+  outline: none;
+  backdrop-filter: blur(6px);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#todo-input::placeholder {
+  color: #c4a99a;
+}
+
+#todo-input:focus {
+  border-color: #c49a82;
+  box-shadow: 0 0 0 3px rgba(196,154,130,0.15);
+}
+
+#add-btn {
+  width: 46px;
+  height: 46px;
+  background: #c49a82;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(196,154,130,0.35);
+}
+
+#add-btn:hover {
+  background: #b08268;
+  box-shadow: 0 6px 16px rgba(196,154,130,0.45);
+}
+
+#add-btn:active {
+  transform: scale(0.95);
+}
+
+/* ── List ── */
+#todo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255,255,255,0.65);
+  border: 1.5px solid rgba(229,211,194,0.7);
+  border-radius: 16px;
+  padding: 14px 16px;
+  backdrop-filter: blur(8px);
+  transition: transform 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 10px rgba(180,130,100,0.08);
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(180,130,100,0.14);
+}
+
+/* custom checkbox */
+.todo-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1.8px solid #d4b09a;
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  transition: background 0.2s, border-color 0.2s;
+  background: transparent;
+}
+
+.todo-item input[type="checkbox"]:checked {
+  background: #c49a82;
+  border-color: #c49a82;
+}
+
+.todo-item input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.todo-item label {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  cursor: pointer;
+  word-break: break-all;
+  color: #3d2b1f;
+  transition: color 0.2s;
+}
+
+.todo-item.done label {
+  text-decoration: line-through;
+  color: #c4a99a;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #d4b09a;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 8px;
+  line-height: 1;
+  opacity: 0;
+  transition: color 0.15s, opacity 0.15s, background 0.15s;
+  flex-shrink: 0;
+}
+
+.todo-item:hover .delete-btn {
+  opacity: 1;
+}
+
+.delete-btn:hover {
+  color: #a0522d;
+  background: rgba(160,82,45,0.08);
+}
+
+/* ── Empty state ── */
+.empty {
+  text-align: center;
+  color: #c4a99a;
+  font-size: 0.88rem;
+  margin-top: 48px;
+  letter-spacing: 0.06em;
+}
